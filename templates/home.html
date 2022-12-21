@@ -10,6 +10,11 @@
                         <option value="{{x}}" name="selch">{{x}}</option>
                     {% endfor %}
                   </select>
+                  <select name="country" method="POST" action="/">
+                    {% for x in country %}
+                        <option value="{{x}}" name="selch">{{x}}</option>
+                    {% endfor %}
+                  </select>
                 <input  type="submit" value="submit">
                 <p>{{ out }}</p>
             </form>

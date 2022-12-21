@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request
 import dfs
 
+tdwr = ["India","Russia","UK","US","Japan","China"]
 
 app = Flask(__name__)
 
@@ -10,9 +11,10 @@ def home():
     channelno.sort()
     if request.method == 'POST':
         ch = int(request.form.get('channel'))
-        ch = dfs.randint(ch)
-        return render_template('home.html',out=ch,channel=channelno)
-    return render_template('home.html',out='',channel=channelno)
+        countrytd = request.form.get('country')
+        ch = dfs.randint(ch,countrytd)
+        return render_template('home.html',out=ch,channel=channelno,country=tdwr)
+    return render_template('home.html',out='',channel=channelno,country=tdwr)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True,port=5000)
