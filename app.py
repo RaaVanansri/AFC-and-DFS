@@ -1,5 +1,6 @@
 from flask import Flask,render_template,request
 import dfs
+import os
 
 tdwr = ["India","Russia","UK","US","Japan","China"]
 
@@ -17,4 +18,5 @@ def home():
     return render_template('home.html',out='',channel=channelno,country=tdwr)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',debug=True,port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0',debug=True,port=port)
