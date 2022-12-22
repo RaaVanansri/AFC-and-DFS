@@ -1,5 +1,6 @@
 import random
-channels = {36:{"Frequency":"20Mhz","DFS":False,"Availability":random.randint(0,1),"TDWR":False},
+channels = {
+    36:{"Frequency":"20Mhz","DFS":False,"Availability":random.randint(0,1),"TDWR":False},
     40:{"Frequency":"20Mhz","DFS":False,"Availability":random.randint(0,1),"TDWR":False},
     44:{"Frequency":"20Mhz","DFS":False,"Availability":random.randint(0,1),"TDWR":False},
     48:{"Frequency":"20Mhz","DFS":False,"Availability":random.randint(0,1),"TDWR":False},
@@ -45,7 +46,9 @@ channels = {36:{"Frequency":"20Mhz","DFS":False,"Availability":random.randint(0,
     50:{"Frequency":"160Mhz","DFS":True,"Availability":random.randint(0,1),"TDWR":False},
     114:{"Frequency":"160Mhz","DFS":True,"Availability":random.randint(0,1),"TDWR":True},
     }
-    
+
+print(len(channels))
+
 def randint(chn,country):
     tdwr = {"India":True,"Russia":True,"UK":False,"US":True,"Japan":False,"China":False}
 
