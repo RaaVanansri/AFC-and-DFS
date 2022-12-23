@@ -32,7 +32,7 @@ channels = {
     102:{"Frequency":"40Mhz","DFS":True,"Availability":random.randint(0,1),"TDWR":False},
     110:{"Frequency":"40Mhz","DFS":True,"Availability":random.randint(0,1),"TDWR":False},
     118:{"Frequency":"40Mhz","DFS":True,"Availability":random.randint(0,1),"TDWR":True},
-    126:{"Frequency":"40Mhz","DFS":True,"Availability":random.randint(0,1),"TDWR":False},
+    126:{"Frequency":"40Mhz","DFS":True,"Availability":random.randint(0,1),"TDWR":True},
     134:{"Frequency":"40Mhz","DFS":True,"Availability":random.randint(0,1),"TDWR":False},
     142:{"Frequency":"40Mhz","DFS":True,"Availability":random.randint(0,1),"TDWR":False},
     151:{"Frequency":"40Mhz","DFS":False,"Availability":random.randint(0,1),"TDWR":False},
