@@ -48,7 +48,7 @@ channels = {
     }
 
 def randint(chn,country):
-    tdwr = {"Australia":True,"India":False,"UK":False,"US":False,"Japan":True,"Canada":True}
+    tdwr = {"Australia":True,"India":False,"Europe":False,"US":False,"Japan":True,"Canada":True}
 
     def avail():
         ach = ''
