@@ -47,10 +47,8 @@ channels = {
     114:{"Frequency":"160Mhz","DFS":True,"Availability":random.randint(0,1),"TDWR":True},
     }
 
-print(len(channels))
-
 def randint(chn,country):
-    tdwr = {"India":True,"Russia":True,"UK":False,"US":True,"Japan":False,"China":False}
+    tdwr = {"Australia":True,"India":False,"UK":False,"US":False,"Japan":True,"Canada":True}
 
     def avail():
         ach = ''
@@ -63,13 +61,13 @@ def randint(chn,country):
         return ach
 
     if channels[chn]["TDWR"] and tdwr.get(country) == True:
-        availablech = avail() #''.join(f"\nChannel {i} with {channels[i]['Frequency']}" if channels[i]["Availability"] == 1 and channels[i]["TDWR"] == False and tdwr.get(country) == True else '' for i in channels)
+        availablech = avail() 
         return f"Can\'t transmit data in the Selected channel No.{chn}.It is preoccupied by TDWR in selected country {country}\nThese Channels are available to transmit data:{availablech}"
     elif channels[chn]["DFS"] and channels[chn]["Availability"] == 0:
-        availablech = avail() #''.join(f"\nChannel {i} with {channels[i]['Frequency']}" if channels[i]["Availability"] == 1 and channels[i]["TDWR"] == False else '' for i in channels)
+        availablech = avail() 
         return f"Selected Channel No.{chn} is not available due to occupied by other services.\nThese Channels are available to transmit data:{availablech}"
     elif channels[chn]["Availability"] == 0:
-        availablech = ''.join(f"\nChannel {i} with {channels[i]['Frequency']}" if channels[i]["Availability"] == 1 else '' for i in channels)
-        return f"Selected Channel No.{chn} is interfered by too many networks.\nThese are suggested Channels to transmit data:{availablech}"
+        availablech = avail() 
+        return f"Selected Channel No.{chn} is available but interfered by too many networks.\nThese are suggested Channels to transmit data:{availablech}"
     else:
         return f"Selected Channel No.{chn} is available to transmitdata"
