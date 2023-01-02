@@ -1,0 +1,2 @@
+inputs to AFC = location(state), coverage(15-45m), and planned_frequencies(channel to transmit data)/power to be used(dBm)
+
