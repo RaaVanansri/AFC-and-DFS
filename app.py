@@ -1,5 +1,6 @@
 from flask import Flask,render_template,request
 import dfs
+import afcdb
 import os
 
 tdwr = ["India","Australia","US","Europe","Canada"]
@@ -19,5 +20,6 @@ def home():
     return render_template('home.html',out='',channel=channelno,country=tdwr)
 
 if __name__ == '__main__':
+    afcdb.dbcollection()
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0',debug=True,port=port)
