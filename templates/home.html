@@ -3,20 +3,9 @@
     <body>
         <link rel="stylesheet" href='/static/main.css'/>
         <div>
-            <form action="/" method="post">
-                <img src="static/5g.png"><br>
-                <select name="channel" method="POST" action="/">
-                    {% for x in channel %}
-                        <option value="{{x}}" name="selch">{{x}}</option>
-                    {% endfor %}
-                  </select>
-                  <select name="country" method="POST" action="/">
-                    {% for x in country %}
-                        <option value="{{x}}" name="selch">{{x}}</option>
-                    {% endfor %}
-                  </select>
-                <input  type="submit" value="submit">
-                <p name="Result">{{ out|safe }}</p>
+            <form method="post">
+                <a href="{{ url_for('dfs5g') }}" ><button action="/dfs" name="dfs5g">DFS5g</button></a>
+                <a href="{{ url_for('afc') }}"><button action="/afc" name="afc6g">AFC6g</button></a>
             </form>
         </div>
     </body>

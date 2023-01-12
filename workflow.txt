@@ -1,2 +1,3 @@
 inputs to AFC = location(state), coverage(15-45m), and planned_frequencies(channel to transmit data)/power to be used(dBm)
 
+ EIRP is 18 dBm at 20 MHz, 21 dBm at 40 MHz, and 24 dBm at 80 MHz

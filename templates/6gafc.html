@@ -1,0 +1,23 @@
+<html>
+    <head><title>DFS</title></head>
+    <body>
+        <link rel="stylesheet" href='/static/main.css'/>
+        <div>
+            <form action="/" method="post">
+                <img src="static/6g.jpeg"><br>
+                <select name="channel" method="POST" action="/">
+                    {% for x in channel %}
+                        <option value="{{x}}" name="selch">{{x}}</option>
+                    {% endfor %}
+                  </select>
+                  <select name="country" method="POST" action="/">
+                    {% for x in country %}
+                        <option value="{{x}}" name="selch">{{x}}</option>
+                    {% endfor %}
+                  </select>
+                <input  type="submit" value="submit">
+                <p name="Result">{{ out|safe }}</p>
+            </form>
+        </div>
+    </body>
+</html>

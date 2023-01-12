@@ -10,16 +10,31 @@ app = Flask(__name__)
 
 @app.route('/',methods=['GET','POST'])
 def home():
+    return render_template('home.html',out='',channel=channelno,country=tdwr)
+
+
+@app.route('/dfs5g',methods=['GET','POST'])
+def dfs5g():
     channelno.sort()
     if request.method == 'POST':
         ch = int(request.form.get('channel'))
         countrytd = request.form.get('country')
         ch = dfs.randint(ch,countrytd)
         ch = ch.replace('\n','<br>')
-        return render_template('home.html',out=ch,channel=channelno,country=tdwr)
-    return render_template('home.html',out='',channel=channelno,country=tdwr)
+        return render_template('5g.html',out=ch,channel=channelno,country=tdwr)
+    return render_template('5g.html',out='',channel=channelno,country=tdwr)
+
+@app.route('/afc',methods=['GET','POST'])
+def afc():
+    channelno.sort()
+    if request.method == 'POST':
+        ch = int(request.form.get('channel'))
+        countrytd = request.form.get('country')
+        ch = dfs.randint(ch,countrytd)
+        ch = ch.replace('\n','<br>')
+        return render_template('6g.html',out=ch,channel=channelno,country=tdwr)
+    return render_template('6gafc.html',out='',channel=channelno,country=tdwr)
 
 if __name__ == '__main__':
-    afcdb.dbcollection()
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0',debug=True,port=port)
